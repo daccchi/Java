@@ -1,0 +1,44 @@
+4/ 正の整数 n を読み込み、ニュートン法で √n の近似値を小数点以下
+// 5桁まで求める過程を出力する。
+// なお、読み込んだ n が正の整数でない場合は、再入力する。
+// 例： 入力 = 2, 出力 = 1.0000, 1.5000, 1.4167, 1.4142,
+
+import java.util.Scanner;
+
+class ex05 {
+    public static void main(String[] args) {
+        String gakuban = "16EC005"; // 学籍番号を入力すること
+        String yourname = "安立雄大"; // 氏名を入力すること
+        System.out.println(gakuban + " " + yourname + "\n"); // 削除しないこと
+        Scanner stdIn = new Scanner(System.in);
+
+		// プログラムを記入
+    int n;
+    do {
+         System.out.println("正の整数：");
+         n = stdIn.nextInt();
+
+    }while(n<=0);
+	
+   
+    double x =5.0;
+    double x2 = 0.0;
+    double t =0.0;
+    double u = 0.0;
+    do{
+
+        x2=(x+n/x)/2;
+        t=x;
+        x=x2;
+        System.out.println(String.format("%.4f",x));
+        u = t-x2;
+        if(u<0)
+        u = -u;
+
+    }while(u>0.0001);
+ 
+
+  }
+}
+
+
